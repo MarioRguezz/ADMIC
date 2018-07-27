@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ADMIC.Forms.ContentPages.GuanajovenCode.GuanajovenCodePage" xmlns:local="clr-namespace:ADMIC.Forms.ContentPages" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+    <local:BasePage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout x:Name="_topContainer" HorizontalOptions="FillAndExpand" Spacing="5" VerticalOptions="Start" Padding="8" IsVisible="true" Orientation="Horizontal" BackgroundColor="#003464" HeightRequest="46">
+                <Image Source="ic_menu_white_24dp.png" HorizontalOptions="Start" Margin="0,10,0,0" HeightRequest="30" WidthRequest="30" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="MenuClicked" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label x:Name="_title" Text="ID ADMIC" HorizontalTextAlignment="Center" VerticalOptions="End" HorizontalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" FontSize="20" />
+                <Image Source="download.png" HorizontalOptions="End" Margin="0,10,0,0" HeightRequest="30" WidthRequest="30" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="DownloadClicked" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Frame Margin="10" Padding="0" VerticalOptions="FillAndExpand" HasShadow="true">
+                <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#b7C7E1F5">
+                    <Grid Padding="0">
+                        <Image Source="" x:Name="_background" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill" />
+                        <BoxView x:Name="Background">
+                        </BoxView>
+                        <StackLayout Orientation="Vertical">
+                            <Image Source="adminc_logo_nopadding.png" HeightRequest="70" Margin="0,5,10,5" Aspect="AspectFit" HorizontalOptions="CenterAndExpand" />
+                            <StackLayout Orientation="Vertical">
+                                <Label Margin="0,0,0,0" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Text="Nombre" x:Name="_name" FontAttributes="Bold" TextColor="#003464" />
+                                <Label Margin="0,0,0,0" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Text="Email" x:Name="_email" TextColor="#003464" />
+                                <Label Margin="0,0,0,0" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Text="ID ADMIC" FontAttributes="Bold" TextColor="#636363" />
+                                <Label Margin="0,0,0,0" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Text="Número" FontAttributes="Bold" x:Name="_numero" TextColor="Black" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Image x:Name="_qrImage" BackgroundColor="Transparent" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                <Label Margin="0,0,0,0" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Text="CURP" x:Name="_CURP" FontAttributes="Bold" TextColor="#636363" />
+                                <Label Margin="0,0,0,0" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Text="curp" x:Name="_curpcode" FontAttributes="Bold" TextColor="Black" />
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="6" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <Label Margin="0,0,0,0" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" Text="Género" x:Name="_gen" FontAttributes="Bold" TextColor="#636363" />
+                                        <Label Margin="0,0,0,0" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" Text="Género" x:Name="_genre" FontAttributes="Bold" TextColor="Black" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <Label Margin="0,0,0,0" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="Fecha de nacimiento" x:Name="_fechanac" FontAttributes="Bold" TextColor="#636363" />
+                                        <Label Margin="0,0,0,0" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="Fecha de nacimiento" x:Name="_fechanacimiento" FontAttributes="Bold" TextColor="Black" />
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                        <Label Margin="0,0,0,0" HorizontalTextAlignment="End" HorizontalOptions="CenterAndExpand" Text="Estado de nacimiento" x:Name="_estadonac" FontAttributes="Bold" TextColor="#636363" />
+                                        <Label Margin="0,0,0,0" HorizontalTextAlignment="End" HorizontalOptions="CenterAndExpand" Text="Estado de nacimiento" x:Name="_estadonacimiento" FontAttributes="Bold" TextColor="Black" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </ScrollView>
+            </Frame>
+        </StackLayout>
+    </local:BasePage.Content>
+</local:BasePage>

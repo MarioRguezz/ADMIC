@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.props')" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{7F88D6D1-17B5-4710-A2D0-2FBFD4F991F1}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ADMIC.iOS</RootNamespace>
+    <AssemblyName>ADMIC.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: David Barrozo (4FCNME55QX)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>22943</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>VS: mx.org.admic Development</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: David Barrozo (4FCNME55QX)</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>VS: mx.org.admic Development</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>Admic ADHOC</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>52184</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>ADMIC_ADHOC</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="DLToolkit.Forms.Controls.FlowListView">
+      <HintPath>..\packages\DLToolkit.Forms.Controls.FlowListView.2.0.4\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\DLToolkit.Forms.Controls.FlowListView.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>..\packages\HockeySDK.Xamarin.4.1.5\lib\Xamarin.iOS10\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK.iOSBindings">
+      <HintPath>..\packages\HockeySDK.Xamarin.4.1.5\lib\Xamarin.iOS10\HockeySDK.iOSBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\packages\Plugin.Permissions.2.2.1\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.2.2.1\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.DataBinding">
+      <HintPath>..\packages\Realm.DataBinding.1.1.0\lib\Xamarin.iOS10\Realm.DataBinding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\packages\Remotion.Linq.2.1.1\lib\portable-net45+win+wpa81+wp80\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm">
+      <HintPath>..\packages\Realm.Database.1.5.0\lib\netstandard1.4\Realm.dll</HintPath>
+    </Reference>
+    <Reference Include="Realm.Sync">
+      <HintPath>..\packages\Realm.1.5.0\lib\netstandard1.4\Realm.Sync.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.2.8\lib\dotnet\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.3\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.1.3\lib\Xamarin.iOS10\Plugin.Geolocator.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geolocator">
+      <HintPath>..\packages\Xam.Plugin.Geolocator.4.1.3\lib\Xamarin.iOS10\Plugin.Geolocator.dll</HintPath>
+    </Reference>
+    <Reference Include="KeyboardOverlap.Forms.Plugin.iOSUnified">
+      <HintPath>..\packages\Xam.Plugins.Forms.KeyboardOverlap.1.0.0.4\lib\Xamarin.iOS10\KeyboardOverlap.Forms.Plugin.iOSUnified.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Windows.Core">
+      <HintPath>..\packages\PInvoke.Windows.Core.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Windows.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Kernel32">
+      <HintPath>..\packages\PInvoke.Kernel32.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Kernel32.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.BCrypt">
+      <HintPath>..\packages\PInvoke.BCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.BCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.NCrypt">
+      <HintPath>..\packages\PInvoke.NCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.NCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\packages\PCLCrypto.2.0.147\lib\xamarinios10\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Auth">
+      <HintPath>..\packages\Xamarin.Auth.1.5.0.3\lib\Xamarin.iOS10\Xamarin.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json" />
+    <Reference Include="Xamarin.Auth.XamarinForms">
+      <HintPath>..\packages\Xamarin.Auth.XamarinForms.1.5.0.3\lib\Xamarin.iOS10\Xamarin.Auth.XamarinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.7\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.4\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.4\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.3.4\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.3.4\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.3.4\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.4.0.280\lib\Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps.iOS">
+      <HintPath>..\packages\Xamarin.Forms.Maps.2.4.0.280\lib\Xamarin.iOS10\Xamarin.Forms.Maps.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.2.9\lib\Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.2.9\lib\Xamarin.iOS10\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.2.9\lib\Xamarin.iOS10\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\BTProgressHUD.1.2.0.6\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="XMessageControl">
+      <HintPath>..\libs\ios-unified\XMessageControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.122203\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.122203\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.122203\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.122203\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Xamarin.Facebook.iOS.4.27.1\lib\Xamarin.iOS10\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Mobile">
+      <HintPath>..\Components\xamarin.mobile-0.7.7\lib\ios-unified\Xamarin.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Core">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.4.0.13\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.InstanceID">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.CloudMessaging">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8\lib\Xamarin.iOS10\Firebase.CloudMessaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.FirebasePushNotification.Abstractions">
+      <HintPath>..\packages\Plugin.FirebasePushNotification.2.3.0\lib\Xamarin.iOS10\Plugin.FirebasePushNotification.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.FirebasePushNotification">
+      <HintPath>..\packages\Plugin.FirebasePushNotification.2.3.0\lib\Xamarin.iOS10\Plugin.FirebasePushNotification.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ADMIC\ADMIC.csproj">
+      <Project>{7DCBBBB2-56D9-48A5-ADBE-9094775A0755}</Project>
+      <Name>ADMIC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-60x60%403x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-20x20%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-40x40%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-29x29%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-76x76%401x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-App-83.5x83.5%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Providers\" />
+    <Folder Include="Renderers\" />
+    <Folder Include="Xamarin.Auth\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Providers\BarcodeService.cs" />
+    <Compile Include="Providers\Picture_iOS.cs" />
+    <Compile Include="Providers\ProgressView.cs" />
+    <Compile Include="Providers\PushNotifications.cs" />
+    <Compile Include="Providers\ScreenshotManager.cs" />
+    <Compile Include="Renderers\BasePageRenderer.cs" />
+    <Compile Include="Renderers\BorderlessEntryImpl.cs" />
+    <Compile Include="Renderers\NoSelectedListViewImpl.cs" />
+    <Compile Include="Xamarin.Auth\AppDelegate.OpenUrl.cs" />
+    <Compile Include="Providers\FaceBookRequester.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ayuda.png" />
+    <BundleResource Include="Resources\background_codigo_guanajoven.PNG" />
+    <BundleResource Include="Resources\background_img2.jpg" />
+    <BundleResource Include="Resources\background1.jpg" />
+    <BundleResource Include="Resources\background2.jpg" />
+    <BundleResource Include="Resources\background3.jpg" />
+    <BundleResource Include="Resources\background4.jpg" />
+    <BundleResource Include="Resources\backlogo.png" />
+    <BundleResource Include="Resources\bubble_in.9.png" />
+    <BundleResource Include="Resources\bubble_out.9.png" />
+    <BundleResource Include="Resources\calendar.png" />
+    <BundleResource Include="Resources\calendar2.png" />
+    <BundleResource Include="Resources\calendario.jpg" />
+    <BundleResource Include="Resources\cf.png" />
+    <BundleResource Include="Resources\chat_grey.png" />
+    <BundleResource Include="Resources\chat.png" />
+    <BundleResource Include="Resources\chatmenu.png" />
+    <BundleResource Include="Resources\checkbox_off.png" />
+    <BundleResource Include="Resources\checkbox_on.png" />
+    <BundleResource Include="Resources\checkin.png" />
+    <BundleResource Include="Resources\checkmenu.png" />
+    <BundleResource Include="Resources\code.png" />
+    <BundleResource Include="Resources\conv1.png" />
+    <BundleResource Include="Resources\conv2.png" />
+    <BundleResource Include="Resources\conv3.png" />
+    <BundleResource Include="Resources\convocatoria_impulsojoven.png" />
+    <BundleResource Include="Resources\convocatoria.png" />
+    <BundleResource Include="Resources\convocatoriabackground.jpg" />
+    <BundleResource Include="Resources\convocatoriamenu.png" />
+    <BundleResource Include="Resources\convocatorias.png" />
+    <BundleResource Include="Resources\convocatoriasmenu.png" />
+    <BundleResource Include="Resources\download.png" />
+    <BundleResource Include="Resources\event.png" />
+    <BundleResource Include="Resources\evento.png" />
+    <BundleResource Include="Resources\eventosbackground.jpg" />
+    <BundleResource Include="Resources\eventosmenu.png" />
+    <BundleResource Include="Resources\facebook_logo.png" />
+    <BundleResource Include="Resources\facebook.png" />
+    <BundleResource Include="Resources\feliz.png" />
+    <BundleResource Include="Resources\flecha_morada.png" />
+    <BundleResource Include="Resources\flecha_naranja.png" />
+    <BundleResource Include="Resources\gobiernoestado.jpg" />
+    <BundleResource Include="Resources\google_logo.png" />
+    <BundleResource Include="Resources\guanajovenmenu.png" />
+    <BundleResource Include="Resources\home.png" />
+    <BundleResource Include="Resources\ic_account_box_black_24dp.png" />
+    <BundleResource Include="Resources\ic_announcement_white_36dp.png" />
+    <BundleResource Include="Resources\ic_arrow_back_blue_24dp.png" />
+    <BundleResource Include="Resources\ic_arrow_back_blue_36dp.png" />
+    <BundleResource Include="Resources\ic_arrow_back_white_24dp.png" />
+    <BundleResource Include="Resources\ic_arrow_back_white_36dp.png" />
+    <BundleResource Include="Resources\ic_cake_black_24dp.png" />
+    <BundleResource Include="Resources\ic_cake_pink_200_24dp.png" />
+    <BundleResource Include="Resources\ic_cake_pink_500_24dp.png" />
+    <BundleResource Include="Resources\ic_call.png" />
+    <BundleResource Include="Resources\ic_chat_white_36dp.png" />
+    <BundleResource Include="Resources\ic_close_white_24dp.png" />
+    <BundleResource Include="Resources\ic_confirmation_number_black_24dp.png" />
+    <BundleResource Include="Resources\ic_date_range_black_24dp.png" />
+    <BundleResource Include="Resources\ic_description_32_px.png" />
+    <BundleResource Include="Resources\ic_direccion.png" />
+    <BundleResource Include="Resources\ic_doc-web.png" />
+    <BundleResource Include="Resources\ic_email_black_24dp.png" />
+    <BundleResource Include="Resources\ic_email.png" />
+    <BundleResource Include="Resources\ic_event_available_white_36dp.png" />
+    <BundleResource Include="Resources\ic_event_white_36dp.png" />
+    <BundleResource Include="Resources\ic_exercise.png" />
+    <BundleResource Include="Resources\ic_facebook.png" />
+    <BundleResource Include="Resources\ic_group_white_36dp.png" />
+    <BundleResource Include="Resources\ic_keyboard_arrow_left_white_24dp.png" />
+    <BundleResource Include="Resources\ic_keyboard_arrow_up_white_24dp.png" />
+    <BundleResource Include="Resources\ic_menu_white_18dp.png" />
+    <BundleResource Include="Resources\ic_menu_white_24dp.png" />
+    <BundleResource Include="Resources\ic_menu_white_36dp.png" />
+    <BundleResource Include="Resources\ic_notificacion_64_px.png" />
+    <BundleResource Include="Resources\ic_pdf-web.png" />
+    <BundleResource Include="Resources\ic_person_black_24dp.png" />
+    <BundleResource Include="Resources\ic_person_white_36dp.png" />
+    <BundleResource Include="Resources\ic_phone_black_24dp.png" />
+    <BundleResource Include="Resources\ic_place_black_24dp.png" />
+    <BundleResource Include="Resources\ic_place_grey_600_24dp.png" />
+    <BundleResource Include="Resources\ic_place_white_24dp.png" />
+    <BundleResource Include="Resources\ic_place_white_36dp.png" />
+    <BundleResource Include="Resources\ic_promocion_64px.png" />
+    <BundleResource Include="Resources\ic_region_32_px.png" />
+    <BundleResource Include="Resources\ic_region_64_px.png" />
+    <BundleResource Include="Resources\ic_reload.png" />
+    <BundleResource Include="Resources\ic_twitter.png" />
+    <BundleResource Include="Resources\ic_unknow-web.png" />
+    <BundleResource Include="Resources\ic_water.png" />
+    <BundleResource Include="Resources\ic_wc_black_24dp.png" />
+    <BundleResource Include="Resources\ic_work_black_24dp.png" />
+    <BundleResource Include="Resources\ic_xls-web.png" />
+    <BundleResource Include="Resources\img1.jpg" />
+    <BundleResource Include="Resources\img2.jpg" />
+    <BundleResource Include="Resources\info.png" />
+    <BundleResource Include="Resources\infowhite.png" />
+    <BundleResource Include="Resources\instagram.png" />
+    <BundleResource Include="Resources\letras_codigo_guanajoven.png" />
+    <BundleResource Include="Resources\login_background.jpg" />
+    <BundleResource Include="Resources\loginbackground.png" />
+    <BundleResource Include="Resources\loginbackground2.png" />
+    <BundleResource Include="Resources\logo_gto.png" />
+    <BundleResource Include="Resources\logo.png" />
+    <BundleResource Include="Resources\logomin.png" />
+    <BundleResource Include="Resources\menubackground.jpg" />
+    <BundleResource Include="Resources\menuburguer.png" />
+    <BundleResource Include="Resources\modificarbackground.jpg" />
+    <BundleResource Include="Resources\modificarbackground2.jpg" />
+    <BundleResource Include="Resources\notificacion.png" />
+    <BundleResource Include="Resources\notificacionbackground.jpg" />
+    <BundleResource Include="Resources\notificacionmenu.png" />
+    <BundleResource Include="Resources\peke_slide2.jpg" />
+    <BundleResource Include="Resources\pin.png" />
+    <BundleResource Include="Resources\placeholder.png" />
+    <BundleResource Include="Resources\plandes.png" />
+    <BundleResource Include="Resources\plus.png" />
+    <BundleResource Include="Resources\profile.png" />
+    <BundleResource Include="Resources\profilemenu.png" />
+    <BundleResource Include="Resources\promocionesmenu.png" />
+    <BundleResource Include="Resources\promotion.png" />
+    <BundleResource Include="Resources\publicidad1.jpg" />
+    <BundleResource Include="Resources\publicidad2.jpg" />
+    <BundleResource Include="Resources\qr_white.png" />
+    <BundleResource Include="Resources\qr.png" />
+    <BundleResource Include="Resources\redesoscialesmenu.png" />
+    <BundleResource Include="Resources\regionesbackground.jpg" />
+    <BundleResource Include="Resources\regionesmenu.png" />
+    <BundleResource Include="Resources\registrobackground.jpg" />
+    <BundleResource Include="Resources\rootbackground.jpg" />
+    <BundleResource Include="Resources\servicios.png" />
+    <BundleResource Include="Resources\skyline.png" />
+    <BundleResource Include="Resources\slide1.png" />
+    <BundleResource Include="Resources\slide2.png" />
+    <BundleResource Include="Resources\slide3.png" />
+    <BundleResource Include="Resources\slide4.png" />
+    <BundleResource Include="Resources\slide5.png" />
+    <BundleResource Include="Resources\slide6.png" />
+    <BundleResource Include="Resources\slide7.png" />
+    <BundleResource Include="Resources\slide8.png" />
+    <BundleResource Include="Resources\slide9.png" />
+    <BundleResource Include="Resources\socialmedia.png" />
+    <BundleResource Include="Resources\socialmenu.png" />
+    <BundleResource Include="Resources\trash.png" />
+    <BundleResource Include="Resources\triste.png" />
+    <BundleResource Include="Resources\turn-on.png" />
+    <BundleResource Include="Resources\twitter.png" />
+    <BundleResource Include="Resources\water.jpg" />
+    <BundleResource Include="Resources\x.jpg" />
+    <BundleResource Include="Resources\youtube.png" />
+    <BundleResource Include="Resources\admic_logo_min.png" />
+    <BundleResource Include="Resources\admic_logo.png" />
+    <BundleResource Include="Resources\admic_registrar.png" />
+    <BundleResource Include="Resources\admic_registro.png" />
+    <BundleResource Include="Resources\admic_home.png" />
+    <BundleResource Include="Resources\admicmenucodigo.png" />
+    <BundleResource Include="Resources\admiceventomenu.png" />
+    <BundleResource Include="Resources\admic_perfil.png" />
+    <BundleResource Include="Resources\admic_eventos.jpg" />
+    <BundleResource Include="Resources\admic_ic_evento.png" />
+    <BundleResource Include="Resources\pgj_ic_place_64dp.png" />
+    <BundleResource Include="Resources\pgj_ic_info.png" />
+    <BundleResource Include="Resources\pgj_ic_event.png" />
+    <BundleResource Include="Resources\pgj_ic_user.png" />
+    <BundleResource Include="Resources\admic_convocatorias.jpg" />
+    <BundleResource Include="Resources\pgj_ic_promotion.png" />
+    <BundleResource Include="Resources\admic_notificaciones.jpg" />
+    <BundleResource Include="Resources\admic_sucursales.jpg" />
+    <BundleResource Include="Resources\pgj_ic_place.png" />
+    <BundleResource Include="Resources\adminc_logo_nopadding.png" />
+    <BundleResource Include="GoogleService-Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamarin.mobile">
+      <Version>0.7.7</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets" Condition="Exists('..\packages\Fody.2.0.6\build\netstandard1.4\Fody.targets')" />
+  <Import Project="..\packages\Realm.Database.1.5.0\build\Realm.Database.targets" Condition="Exists('..\packages\Realm.Database.1.5.0\build\Realm.Database.targets')" />
+  <Import Project="..\packages\Realm.1.5.0\build\Realm.targets" Condition="Exists('..\packages\Realm.1.5.0\build\Realm.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Core.4.0.13\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Core.4.0.13\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.2.0.8\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Analytics.4.0.5\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8\build\Xamarin.Firebase.iOS.CloudMessaging.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.CloudMessaging.2.0.8\build\Xamarin.Firebase.iOS.CloudMessaging.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />
+</Project>

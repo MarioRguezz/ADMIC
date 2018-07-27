@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ADMIC.Forms.ContentPages.Home.MasterHomePage">
+    <ContentPage.Content>
+        <Grid
+            Padding="0"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="1*" />
+                <RowDefinition
+                    Height="1*" />
+                <RowDefinition
+                    Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image
+                Grid.RowSpan="4"
+                Source="admic_registro.png"
+                Scale="1.0"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Aspect="AspectFill" />
+            <BoxView
+                Grid.RowSpan="4"
+                x:Name="Background"
+                BackgroundColor="#83074677">
+            </BoxView>
+            <StackLayout
+                Grid.Row="0"
+                Orientation="Vertical"
+                Margin="0,15,0,0"
+                HorizontalOptions="FillAndExpand">
+                <StackLayout
+                    x:Name="_topContainer"
+                    HorizontalOptions="FillAndExpand"
+                    Spacing="5"
+                    VerticalOptions="Start"
+                    Padding="8"
+                    IsVisible="true"
+                    Orientation="Horizontal"
+                    HeightRequest="46">
+                    <Image
+                        Source="ic_menu_white_24dp.png"
+                        HorizontalOptions="StartAndExpand"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="MenuClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image
+                        Source="infowhite.png"
+                        HorizontalOptions="End"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="VideoClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+            <Image
+                Grid.Row="1"
+                x:Name="imageTest"
+                Margin="0,-20,0,0"
+                Source="admic_logo.png"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HeightRequest="120"
+                WidthRequest="160" />
+            <StackLayout
+                Grid.Row="1"
+                x:Name="_subtopContainer"
+                Spacing="5"
+                VerticalOptions="Start"
+                Padding="8"
+                IsVisible="true"
+                HorizontalOptions="End"
+                Orientation="Horizontal"
+                HeightRequest="36">
+                <Image
+                    Source="ic_keyboard_arrow_left_white_24dp.png"
+                    HorizontalOptions="End"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Advertising" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Grid
+                Grid.Row="2"
+                VerticalOptions="FillAndExpand">
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Orientation="Vertical"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Image
+                        Source="admicmenucodigo.png"
+                        x:Name="_imagecodigo"
+                        HorizontalOptions="FillAndExpand"
+                        Aspect="AspectFit"
+                        HeightRequest="60"
+                        WidthRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="GuanajovenClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Text="ID AMIC"
+                        HorizontalTextAlignment="Center"
+                        x:Name="_codigoText"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+					 <Label
+                        Text=""
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Orientation="Vertical"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Image
+                        Source="admiceventomenu.png"
+                        HorizontalOptions="FillAndExpand"
+                        Aspect="AspectFit"
+                        HeightRequest="60"
+                        WidthRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="EventosClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Text="Eventos"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                    <Label
+                        Text=""
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Orientation="Vertical"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                     <Image
+                        Source="convocatoriamenu.png"
+                        HorizontalOptions="FillAndExpand"
+                        Aspect="AspectFit"
+                        HeightRequest="60"
+                        WidthRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="ConvocaClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Text="Convocatoria"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                    <Label
+                        Text=""
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Orientation="Vertical"
+                    Margin="-18,0,0,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+					  <Image
+                        Source="promocionesmenu.png"
+                        x:Name="_imagepromocion"
+                        HorizontalOptions="FillAndExpand"
+                        Aspect="AspectFit"
+                        HeightRequest="60"
+                        WidthRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="PromotionClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Text="Promociones"
+                        x:Name="_promocionText"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                    <Label
+                        Text=""
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Orientation="Vertical"
+                    Margin="-27,0,0,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Image
+                        Source="socialmenu.png"
+                        HorizontalOptions="FillAndExpand"
+                        Aspect="AspectFit"
+                        HeightRequest="60"
+                        WidthRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="RedClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Text="Redes"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                    <Label
+                        Text="Sociales"
+                        HorizontalTextAlignment="Center"
+                        Margin="0,-10,0,0"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Orientation="Vertical"
+                    Margin="-20,0,0,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                    <Image
+                        Source="chatmenu.png"
+                        HorizontalOptions="FillAndExpand"
+                        Aspect="AspectFit"
+                        HeightRequest="60"
+                        WidthRequest="50">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="ChatClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Text="Chat"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                    <Label
+                        Text=""
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="None"
+                        FontSize="11"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </Grid>
+            <Button
+                Grid.Row="3"
+                Text="¿Te interesa un crédito?"
+                FontAttributes="Bold"
+                TextColor="#FFFFFF"
+                BackgroundColor="Transparent"
+                HorizontalOptions="FillAndExpand"
+                Clicked="Bolsadetrabajo" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

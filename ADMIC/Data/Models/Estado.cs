@@ -1,0 +1,18 @@
+﻿using System;
+using System.IO;
+using Newtonsoft.Json;
+
+namespace ADMIC.Data.Models
+{
+
+	public class Estado
+	{
+		public int? id_estado { get; set; }
+		public string nombre { get; set; }
+		public string abreviatura { get; set; }
+		public object created_at { get; set; }
+		public object updated_at { get; set; }
+		public object deleted_at { get; set; }
+	}
+
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:local="clr-namespace:ADMIC.Forms.ContentPages"
+    xmlns:localViews="clr-namespace:ADMIC.Forms.CustomViews"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ADMIC.Forms.ContentPages.ChatPage"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+    <local:BasePage.Content>
+        <StackLayout>
+            <Grid
+                BackgroundColor="#003464"
+                Padding="0,5,0,5"
+                Margin="0,20,0,0">
+                <Image
+                    Source="ic_menu_white_24dp.png"
+                    Margin="7,10,0,0"
+                    HeightRequest="30"
+                    WidthRequest="30"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="CloseClicked" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                    x:Name="_title"
+                    Text="Chat"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="End"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="20" />
+                <Button
+                    HorizontalOptions="End"
+                    Image="ic_reload.png"
+                    Margin="0,0,8,0"
+                    Clicked="GetChatMessages"
+                    HeightRequest="25"
+                    WidthRequest="25"
+                    BackgroundColor="Transparent" />
+            </Grid>
+            <ScrollView
+                VerticalOptions="FillAndExpand">
+                <Grid
+                    RowSpacing="0"
+                    BackgroundColor="#E6E7E9">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="1*" />
+                        <RowDefinition
+                            Height="70" />
+                    </Grid.RowDefinitions>
+                    <localViews:NoSelectedListView
+                        Grid.Row="0"
+                        x:Name="_listView"
+                        IsPullToRefreshEnabled="true"
+                        HorizontalOptions="FillAndExpand"
+                        HasUnevenRows="true"
+                        BackgroundColor="White"
+                        SeparatorVisibility="None">
+                        <ListView.Footer>
+                            <BoxView
+                                HeightRequest="0"
+                                BackgroundColor="Transparent" />
+                        </ListView.Footer>
+                    </localViews:NoSelectedListView>
+                    <!-- <Button Grid.Row="2" Text="Enviar nuevo mensaje" HeightRequest="50" BackgroundColor="#003464" TextColor="White" Clicked="MostrarDialogoMensaje" HorizontalOptions="FillAndExpand" />
+                    - - - -
+                    -->
+                    <StackLayout
+                        Grid.Row="1"
+                        HeightRequest="70"
+                        Orientation="Horizontal"
+                        Padding="10,10,10,10">
+                        <Entry
+                            x:Name="_entryMensaje"
+                            HorizontalOptions="FillAndExpand" />
+                        <Button
+                            Text="Enviar"
+                            Clicked="EnviarMensaje" />
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </local:BasePage.Content>
+</local:BasePage>

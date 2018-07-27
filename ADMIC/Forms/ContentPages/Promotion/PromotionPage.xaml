@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ADMIC.Forms.ContentPages.Promotion.PromotionPage" xmlns:local="clr-namespace:ADMIC.Forms.ContentPages" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+    <local:BasePage.Content>
+        <Grid RowSpacing="0" Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" x:Name="_image" Source="background3.jpg" Margin="15" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Aspect="AspectFill" />
+            <Label Grid.Row="0" x:Name="_promotion" Text="Promociones" HorizontalTextAlignment="Center" VerticalOptions="End" HorizontalOptions="CenterAndExpand" TextColor="#003464" FontAttributes="Bold" FontSize="20" />
+            <ListView Grid.Row="1" x:Name="ListView" HasUnevenRows="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5" Margin="5,0,0,0" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Image Source="pgj_ic_promotion.png" HeightRequest="50" HorizontalOptions="Start"  VerticalOptions="Center"  />
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding titulo}" Margin="0,5,0,0" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" TextColor="#b40000" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding FechaInicioLabel}" Margin="0,-5,0,0" FontSize="13" FontAttributes="None" VerticalOptions="Center" TextColor="#636363" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                        <Label Text="{Binding FechaFinLabel}" Margin="0,-5,0,0" FontSize="13" FontAttributes="None" VerticalOptions="Center" TextColor="#636363" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                    </StackLayout>
+                                    <Label Text="APLICAR PROMOCIÓN" Margin="0,-5,0,0" FontSize="12" FontAttributes="None" VerticalOptions="Center" TextColor="#003464" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" />
+                                </StackLayout>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapItem" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <BoxView BackgroundColor="Transparent" HeightRequest="0"/>
+                </ListView.Footer>
+            </ListView>
+        </Grid>
+    </local:BasePage.Content>
+</local:BasePage>

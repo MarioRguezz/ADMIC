@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ADMIC.Forms.ContentPages.SocialMedia.SocialFbPage">
+    <ContentPage.Content>
+        <ListView x:Name="fbList" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="15,20,15,20">
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding admic_logo_min}" Aspect="AspectFill" HeightRequest="40" Margin="0,-10,0,-10" />
+                                <Label Text="{Binding from.name}" TextColor="#767676" FontSize="14" />
+                            </StackLayout>
+                            <Image Source="{Binding full_picture}" Aspect="AspectFill" />
+                            <Label Text="{Binding story}" Margin="0,-5,0,0" TextColor="#767676" FontSize="14" />
+                            <Label Text="{Binding message}" TextColor="Black" Margin="0,5,0,0" FontSize="15" />
+                            <Label Text="{Binding TimeLabel}" TextColor="#767676" FontSize="13" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Footer>
+                <BoxView BackgroundColor="Transparent" HeightRequest="0" />
+            </ListView.Footer>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

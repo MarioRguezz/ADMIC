@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{7F88D6D1-17B5-4710-A2D0-2FBFD4F991F1}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.ItemProperties.ADMIC.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.ad6cec35f2e309dfced832a183538c41230f47b4" automaticSigning="False">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="C6883ENWKH" TeamId="L3YSQG3XE3" />
+  </MonoDevelop.Ide.ItemProperties.ADMIC.iOS>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/oscar/Downloads/ADMIC 6 - final 2/ADMIC/App.xaml.cs" relfile="ADMIC/App.xaml.cs" line="135" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

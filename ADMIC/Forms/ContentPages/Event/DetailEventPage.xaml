@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ADMIC.Forms.ContentPages.Event.DetailEventPage" xmlns:local="clr-namespace:ADMIC.Forms.ContentPages" xmlns:localViews="clr-namespace:ADMIC.Forms.CustomViews" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
+    <ContentPage.Content>
+        <Grid Padding="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+                <localViews:CustomMap x:Name="Map" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsEnabled="false" IsShowingUser="true" MapType="Street" />
+                <Image HeightRequest="50" TranslationY="-15" VerticalOptions="Center" HorizontalOptions="Center" Source="pin.png" />
+                <BoxView HeightRequest="4" WidthRequest="4" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#003464" />
+            </Grid>
+            <ScrollView Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="8">
+                <Grid HorizontalOptions="FillAndExpand" ColumnSpacing="3" RowSpacing="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="_title" Text="Título" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,0" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" TextColor="#b40000"
+                        HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                    <Image Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Source="pgj_ic_user.png" />
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="_user" Text="Área responsable" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="14" TextColor="#636363" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                    <Image Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Source="pgj_ic_event.png" />
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="_direccion" Text="Dirección del evento" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="14" TextColor="#636363" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                    <Image Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Source="pgj_ic_info.png" />
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="_evento" Text="Evento" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="14" TextColor="#636363" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                    <Image Grid.Row="4" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Source="pgj_ic_event.png" />
+                    <Label Grid.Row="4" Grid.Column="1" x:Name="_fecha" Text="25-09-1992" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="14" TextColor="#636363" VerticalOptions="Center" VerticalTextAlignment="Center" />
+                    <Label x:Name="_document" Text="Documentos" FontSize="16" TextColor="#636363" Grid.Row="5" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" />
+                    <flv:FlowListView x:Name="_flowListView" FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="false" Grid.Row="6" Grid.ColumnSpan="2" HeightRequest="130" RowHeight="130">
+                        <flv:FlowListView.FlowColumnTemplate>
+                            <DataTemplate>
+                                <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="130" Spacing="0">
+                                    <Image Source="{Binding Icono}" HeightRequest="90" />
+                                    <Label Text="{Binding titulo}" HorizontalTextAlignment="Center" FontSize="12" TextColor="Black" HeightRequest="40"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </flv:FlowListView.FlowColumnTemplate>
+                    </flv:FlowListView>
+                    <Button Grid.Row="7" Grid.ColumnSpan="2" x:Name="_assistance" Clicked="EventoClicked" Text="Asistí al evento" TextColor="White" BackgroundColor="#003464" HeightRequest="65" />
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</local:BasePage>

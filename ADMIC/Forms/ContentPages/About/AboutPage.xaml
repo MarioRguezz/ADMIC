@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ADMIC.Forms.ContentPages.About.AboutPage"
+    xmlns:local="clr-namespace:ADMIC.Forms.ContentPages"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+    <local:BasePage.Content>
+        <ScrollView>
+            <StackLayout
+                Orientation="Vertical">
+                <StackLayout
+                    x:Name="_topContainer"
+                    HorizontalOptions="FillAndExpand"
+                    Spacing="5"
+                    VerticalOptions="Start"
+                    Padding="8"
+                    IsVisible="true"
+                    Orientation="Horizontal"
+                    BackgroundColor="#003464"
+                    HeightRequest="46">
+                    <Image
+                        Source="ic_menu_white_24dp.png"
+                        HorizontalOptions="StartAndExpand"
+                        Margin="0,10,0,0"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="CloseClicked" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <Frame
+                    Margin="10"
+                    Padding="0"
+                    VerticalOptions="FillAndExpand"
+                    HasShadow="false">
+                    <Frame.Content>
+                        <StackLayout
+                            Orientation="Vertical">
+                            <Image
+                                Source="admic_logo.png"
+                                Margin="0,1,-10,10"
+                                Aspect="AspectFit"
+                                HeightRequest="70"
+                                WidthRequest="70"
+                                HorizontalOptions="FillAndExpand" />
+                            <Label
+                                Text="¿Quienes somos?"
+                                Margin="0,1,0,0"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"
+                                TextColor="#B40000"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start" />
+                            <Label
+                                x:Name="_queHacemos"
+                                Text="Texto"
+                                Margin="0,-5,0,0"
+                                FontSize="15"
+                                FontAttributes="None"
+                                VerticalOptions="Center"
+                                TextColor="#636363"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start" />
+                            <Label
+                                Text="Asesorias"
+                                Margin="0,20,0,0"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"
+                                TextColor="#B40000"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start" />
+                            <Label
+                                x:Name="_logros"
+                                Text="Logros"
+                                Margin="0,-5,0,0"
+                                FontSize="15"
+                                FontAttributes="None"
+                                VerticalOptions="Center"
+                                TextColor="#636363"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start" />
+                            <Label
+                                Text="Capacitación"
+                                Margin="0,20,0,0"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"
+                                TextColor="#B40000"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start" />
+                            <Label
+                                x:Name="_capacitacion"
+                                Text="Logros"
+                                Margin="0,-5,0,0"
+                                FontSize="15"
+                                FontAttributes="None"
+                                VerticalOptions="Center"
+                                TextColor="#636363"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start" />
+                            <Label
+                                Text="Crédito"
+                                Margin="0,20,0,0"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"
+                                TextColor="#B40000"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start" />
+                            <Label
+                                x:Name="_cap"
+                                Text="crédito"
+                                Margin="0,-5,0,0"
+                                FontSize="15"
+                                FontAttributes="None"
+                                VerticalOptions="Center"
+                                TextColor="#636363"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start" />
+                        </StackLayout>
+                    </Frame.Content>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </local:BasePage.Content>
+</local:BasePage>
